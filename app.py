@@ -40,14 +40,14 @@ while True:
         curr.execute("SELECT * FROM users")
         for user in curr.fetchall():
             print(user)
-    else if action == 2:
+    elif action == 2:
         print("Podaj name:")
         name = input()
         print("Podaj login:")
         login = input()
         curr.execute(insert, (name, login))
         db.commit()
-    else if action == 3:
+    elif action == 3:
         #update
         print("Ktorego usera zmodyfikowac? podaj id:")
         user_id = input()
@@ -60,7 +60,7 @@ while True:
         curr.execute(update, val)
         db.commit()
         print(curr.rowcount, " record(s) affected")
-    else if action == 4:
+    elif action == 4:
         #delete
         print("Ktorego usera usunac? podaj id:")
         user_id = input()
