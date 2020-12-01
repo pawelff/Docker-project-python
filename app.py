@@ -51,7 +51,7 @@ while True:
     elif action == 3:
         #update
         print("Ktorego usera zmodyfikowac? podaj id:")
-        user_id = input()
+        user_id = int(input())
         print("Podaj name:")
         name = input()
         print("Podaj login:")
@@ -64,7 +64,7 @@ while True:
     elif action == 4:
         #delete
         print("Ktorego usera usunac? podaj id:")
-        user_id = input()
+        user_id = int(input())
         delete = "DELETE FROM users WHERE id = %s"
         curr.execute(delete, user_id)
         db.commit()
