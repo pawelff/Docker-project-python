@@ -32,6 +32,7 @@ def print_menu():
 print_menu()
 
 while True:
+    print_menu()
     print("Co chcesz zrobic?")
     action = int(input())
 
@@ -55,7 +56,7 @@ while True:
         name = input()
         print("Podaj login:")
         login = input()
-        update = "UPDATE users SET name = %s, login = %s WHERE id = %d"
+        update = "UPDATE users SET name = %s, login = %s WHERE id = %s"
         val = (name, login, user_id)
         curr.execute(update, val)
         db.commit()
@@ -64,7 +65,7 @@ while True:
         #delete
         print("Ktorego usera usunac? podaj id:")
         user_id = input()
-        delete = "DELETE FROM users WHERE id = %d"
+        delete = "DELETE FROM users WHERE id = %s"
         curr.execute(delete, user_id)
         db.commit()
         print(curr.rowcount, " record(s) deleted")
